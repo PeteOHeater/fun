@@ -3,17 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Roulette Pilot</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Chris Tulk - Roulette Pilot</title>
+    <style>
+        /* This is the CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a; /* Dark hangar background */
+            color: white;
+            text-align: center;
+        }
+
+        #click-word {
+            font-size: 2rem;
+            color: #ffcc00; /* Gold/Aviation yellow */
+            cursor: pointer;
+            padding: 10px;
+            border: 2px dashed #ffcc00;
+            transition: 0.3s;
+        }
+
+        #click-word:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        #message {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            opacity: 0; /* Starts invisible */
+            transition: opacity 0.5s ease-in;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Hangar</h1>
-        <p>Who is the greatest of all time?</p>
-        <span id="click-word" class="highlight">Click here</span>
-        
-        <h2 id="message" class="hidden">Chris Tulk, best Roulette pilot ever.</h2>
-    </div>
-    <script src="script.js"></script>
+
+    <h1>Roulette Squadron</h1>
+    <p>Click the button below to reveal the legend:</p>
+    
+    <div id="click-word">REVEAL PILOT</div>
+
+    <div id="message">Chris Tulk, best Roulette pilot ever.</div>
+
+    <script>
+        // This is the JavaScript
+        const trigger = document.getElementById('click-word');
+        const hiddenMessage = document.getElementById('message');
+
+        trigger.addEventListener('click', function() {
+            // This changes the opacity to make it appear
+            hiddenMessage.style.opacity = '1';
+            // Optional: alert box just to be sure it works
+            console.log("Button clicked!");
+        });
+    </script>
+
 </body>
 </html>
